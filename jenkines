@@ -9,7 +9,7 @@ pipeline{
 
         stage("prod deploy"){
         when{
-            Branch = main
+            Branch == "main"
         }
         steps{
             echo "prod deploy succesfull"
@@ -18,7 +18,7 @@ pipeline{
     
         stage("test deploy"){
         when{
-            Branch = test
+            Branch == "test"
         }
         steps{
           echo "test deploy succesfull"  
@@ -27,7 +27,7 @@ pipeline{
   
         stage("dev deploy"){
         when{
-            Branch = dev
+            Branch == "dev"
         }
         steps{
         echo "dev deploy was succesfull"
