@@ -1,39 +1,37 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("maven build"){
-            steps{
-            echo "maven build succesfull"
+    stages {
+        stage("maven build") {
+            steps {
+                echo "maven build successful"
             }
         }
 
-        stage("prod deploy"){
-        when{
-            Branch == "main"
+        stage("prod deploy") {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo "prod deploy successful"
+            }
         }
-        steps{
-            echo "prod deploy succesfull"
+
+        stage("test deploy") {
+            when {
+                branch 'test'
+            }
+            steps {
+                echo "test deploy successful"
+            }
         }
-        }
-    
-        stage("test deploy"){
-        when{
-            Branch == "test"
-        }
-        steps{
-          echo "test deploy succesfull"  
-        }
-        }
-  
-        stage("dev deploy"){
-        when{
-            Branch == "dev"
-        }
-        steps{
-        echo "dev deploy was succesfull"
-        }
+
+        stage("dev deploy") {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo "dev deploy was successful"
+            }
         }
     }
-   
-    
 }
