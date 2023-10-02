@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage("maven build"){
-            echo 'maven build succesfull'
+            echo "maven build succesfull"
         }
     }
         stages{
@@ -10,7 +10,7 @@ pipeline{
             Branch = "main"
         }
         stage("prod deploy"){
-            echo 'prod deploy succesfull'
+            echo "prod deploy succesfull"
         }
     }
         stages{
@@ -18,7 +18,7 @@ pipeline{
             Branch = "test"
         }
         stage("test deploy"){
-            echo 'test deploy succesfull'
+            echo "test deploy succesfull"
         }
     }
         stages{
@@ -26,7 +26,7 @@ pipeline{
             Branch = "dev"
         }
         stage("dev deploy"){
-            echo 'dev deploy was succesfull'
+            echo "dev deploy was succesfull"
         }
     }
     
